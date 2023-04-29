@@ -200,9 +200,6 @@ healthyBtn.addEventListener('click', function(){
         healthyBtn.innerHTML = 'Show Healthy Pet';
         showListPetTable(listPet);
     }
-
-    
-
 })
 
 bmiBtn.addEventListener('click', function(){
@@ -210,7 +207,12 @@ bmiBtn.addEventListener('click', function(){
         listPet[i].bmi = callBMI(listPet[i].weight, listPet[i].length, listPet[i].type).toFixed(2);
     }
 
-    showListPetTable(listPet);
+    if(isShowHealthy){
+        showHealthyPet();
+    }
+    else{
+        showListPetTable(listPet);
+    }
 })
 
 //DEFAULT
